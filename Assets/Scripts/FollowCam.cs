@@ -4,10 +4,10 @@ public class FollowCam : MonoBehaviour
 {
     [SerializeField] private Transform _target;
     [SerializeField] private Vector3 _followPosition = new Vector3(0f, 2f, -10f);
-    [SerializeField] private float _followDelay = 10f;
-    [SerializeField] private float _rotationDelay = 10f;
+    [SerializeField] private float _followDelay = 0.15f;
 
     private Transform _transform;
+    private Vector3 _velocity = Vector3.one;
 
     private void Awake()
     {
@@ -16,22 +16,15 @@ public class FollowCam : MonoBehaviour
 
     private void LateUpdate()
     {
-        MoveToTarget(_target, _followPosition, _followDelay);
-        RotateToTarget(_target, _rotationDelay);
+        SmoothFollow();
     }
 
-    private void MoveToTarget(Transform target, Vector3 followPosition, float followDelay)
+   private void SmoothFollow()
     {
-        Vector3 toPosition = target.position + (target.rotation * followPosition);
-        Vector3 currentPosition = Vector3.Lerp(transform.position, toPosition, followDelay * Time.deltaTime);
-        _transform.position = currentPosition;
+        Vector3 toPosition = _target.position + (_target.rotation * _followPosition);
+        _transform.position = Vector3.SmoothDamp(_transform.position, toPosition, ref _velocity, _followDelay);
+        _transform.LookAt(_target, _target.up);
     }
 
-    private void RotateToTarget(Transform target, float rotationDelay)
-    {
-        Quaternion toRotation = Quaternion.LookRotation(target.position - transform.position, target.up);
-        Quaternion currentRotation = Quaternion.Slerp(transform.rotation, toRotation, rotationDelay * Time.deltaTime);
-        _transform.rotation = currentRotation;
-    }
 
 }

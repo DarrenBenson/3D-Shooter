@@ -98,5 +98,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
   _followPosition: {x: 0, y: 2, z: -10}
-  _followDelay: 10
+  _followDelay: 0.15
   _rotationDelay: 10
