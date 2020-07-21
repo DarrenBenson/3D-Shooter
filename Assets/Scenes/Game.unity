@@ -226,18 +226,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1019640210656710429, guid: af9d619966f18ea4e8f618b82b2757ea,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000,
-        type: 0}
-    - target: {fileID: 1019640210787769586, guid: af9d619966f18ea4e8f618b82b2757ea,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000,
-        type: 0}
     - target: {fileID: 2576226892876951893, guid: af9d619966f18ea4e8f618b82b2757ea,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -298,18 +286,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Ship
       objectReference: {fileID: 0}
-    - target: {fileID: 4705996989462995868, guid: af9d619966f18ea4e8f618b82b2757ea,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000,
-        type: 0}
-    - target: {fileID: 5157153301574786915, guid: af9d619966f18ea4e8f618b82b2757ea,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000,
-        type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af9d619966f18ea4e8f618b82b2757ea, type: 3}
 --- !u!1001 &7338252196801915101

@@ -650,17 +650,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Laser
       objectReference: {fileID: 0}
-    - target: {fileID: 5722230192184225674, guid: fa583e07074750d4d8d65c03acd51365,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000,
-        type: 0}
-    - target: {fileID: 5722230192184225675, guid: fa583e07074750d4d8d65c03acd51365,
-        type: 3}
-      propertyPath: m_Positions.Array.data[1].z
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa583e07074750d4d8d65c03acd51365, type: 3}
 --- !u!4 &4705996989462995858 stripped
@@ -735,17 +724,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Right Laser
-      objectReference: {fileID: 0}
-    - target: {fileID: 5722230192184225674, guid: fa583e07074750d4d8d65c03acd51365,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000,
-        type: 0}
-    - target: {fileID: 5722230192184225675, guid: fa583e07074750d4d8d65c03acd51365,
-        type: 3}
-      propertyPath: m_Positions.Array.data[1].z
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa583e07074750d4d8d65c03acd51365, type: 3}
@@ -822,17 +800,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Left Laser
       objectReference: {fileID: 0}
-    - target: {fileID: 5722230192184225674, guid: fa583e07074750d4d8d65c03acd51365,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000,
-        type: 0}
-    - target: {fileID: 5722230192184225675, guid: fa583e07074750d4d8d65c03acd51365,
-        type: 3}
-      propertyPath: m_Positions.Array.data[1].z
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa583e07074750d4d8d65c03acd51365, type: 3}
 --- !u!4 &1019640210787769596 stripped
@@ -853,16 +820,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Thruster
       objectReference: {fileID: 0}
-    - target: {fileID: 495093381807159509, guid: 090a69de2d30791479ce0e552e8b8fa7,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000,
-        type: 0}
     - target: {fileID: 495093381807159511, guid: 090a69de2d30791479ce0e552e8b8fa7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.022
       objectReference: {fileID: 0}
     - target: {fileID: 495093381807159511, guid: 090a69de2d30791479ce0e552e8b8fa7,
         type: 3}
@@ -872,7 +833,7 @@ PrefabInstance:
     - target: {fileID: 495093381807159511, guid: 090a69de2d30791479ce0e552e8b8fa7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.82
+      value: -0.983
       objectReference: {fileID: 0}
     - target: {fileID: 495093381807159511, guid: 090a69de2d30791479ce0e552e8b8fa7,
         type: 3}
