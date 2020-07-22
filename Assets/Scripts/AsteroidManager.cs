@@ -5,6 +5,13 @@ public class AsteroidManager : MonoBehaviour
     [SerializeField] private Asteroid _asteroid;
     [SerializeField] private int _gridSpacing = 10;
 
+    private Transform _transform;
+
+    private void Awake()
+    {
+        _transform = transform;
+    }
+
     private void Start()
     {
         PlaceAsteroids();
@@ -17,9 +24,9 @@ public class AsteroidManager : MonoBehaviour
             for (var y = 0; y < _gridSpacing; y++)
             {
                 for (var z = 0; z < _gridSpacing; z++){
-                    var xPos = transform.position.x + (x * _gridSpacing) + RandomGridOffset();
-                    var yPos = transform.position.y + (y * _gridSpacing) + RandomGridOffset();
-                    var zPos = transform.position.z + (z * _gridSpacing) + RandomGridOffset();
+                    var xPos = _transform.position.x + (x * _gridSpacing) + RandomGridOffset();
+                    var yPos = _transform.position.y + (y * _gridSpacing) + RandomGridOffset();
+                    var zPos = _transform.position.z + (z * _gridSpacing) + RandomGridOffset();
                     SpawnAsteroid(new Vector3(xPos, yPos, zPos));
                 }
             }            
@@ -33,7 +40,7 @@ public class AsteroidManager : MonoBehaviour
 
     private void SpawnAsteroid(Vector3 asteroidPosition)
     {
-        Instantiate(_asteroid, asteroidPosition, Quaternion.identity, transform);
+        Instantiate(_asteroid, asteroidPosition, Quaternion.identity, _transform);
     }
 
 }

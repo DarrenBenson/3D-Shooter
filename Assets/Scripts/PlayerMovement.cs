@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
+[DisallowMultipleComponent]
 public class PlayerMovement : MonoBehaviour {
 
     [SerializeField] private float _movementSpeed = 50f;
@@ -33,19 +34,16 @@ public class PlayerMovement : MonoBehaviour {
         if(CrossPlatformInputManager.GetAxis("Vertical") > 0)
         {
             _transform.position += _transform.forward * _movementSpeed * Time.deltaTime * CrossPlatformInputManager.GetAxis("Vertical");
-            foreach (var thruster in _thrusters)
+            foreach(var thruster in _thrusters)
             {
-                thruster.Activate(true);
+                thruster.Intensity(CrossPlatformInputManager.GetAxis("Vertical"));
             }
         }
         else
         {
-            foreach (var thruster in _thrusters)
-            {
-                thruster.Activate(false);
-            }
         }
 
     }
+
 
 }
