@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour {
     private void Update()
     {
         Turn();
-        Thrust();
+        Move();
     }
 
     private void Turn()
@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour {
         _transform.Rotate(pitch, yaw, roll);
     }
 
-    private void Thrust()
+    private void Move()
     {
         if(CrossPlatformInputManager.GetAxis("Vertical") > 0)
         {
