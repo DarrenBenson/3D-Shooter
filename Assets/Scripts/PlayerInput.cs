@@ -14,7 +14,6 @@ public class PlayerInput : MonoBehaviour
         {
             foreach (var laser in _lasers)
             {
-//                Vector3 targetPosition = _transform.position + (_transform.forward * laser.Distance);
                 laser.FireLaser();
             }
         }

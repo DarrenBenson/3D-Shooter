@@ -7,6 +7,8 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] private Transform _target;
     [SerializeField] private Laser[] _lasers;
 
+    private Vector3 _hitPosition;
+
     private Transform _myTransform;
     private Transform MyTransform
     {
@@ -52,7 +54,8 @@ public class EnemyAttack : MonoBehaviour
             {
                 if (hit.transform.CompareTag("Player"))
                 {
-                    Debug.DrawRay(laser.transform.position, attackDirection, Color.red);
+                    Debug.DrawRay(laser.transform.position, attackDirection, Color.green);
+                    _hitPosition = hit.transform.position;
                     return true;
                 }
             }
@@ -65,7 +68,7 @@ public class EnemyAttack : MonoBehaviour
     {
         foreach (var laser in _lasers)
         {
-            laser.FireLaser();
+            laser.FireLaser(_hitPosition);
         }
     }
 

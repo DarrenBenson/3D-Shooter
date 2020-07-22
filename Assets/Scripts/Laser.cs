@@ -60,11 +60,18 @@ public class Laser : MonoBehaviour
             return MyTransform.position + (MyTransform.forward * _laserDistance);
         }
     }
-    public void FireLaser() {
+
+    public void FireLaser() 
+    {
+        FireLaser(CastRay());
+    }
+
+    public void FireLaser(Vector3 targetPosition)
+    {
         if (_canFire)
         {
             _laserBeam.SetPosition(0, MyTransform.position);
-            _laserBeam.SetPosition(1, CastRay());
+            _laserBeam.SetPosition(1, targetPosition);
             _laserBeam.enabled = true;
             _laserLight.enabled = true;
             _canFire = false;
