@@ -5,6 +5,7 @@ public class EnemyAttack : MonoBehaviour
 {
 
     [SerializeField] private Transform _target;
+    [SerializeField] private Laser[] _lasers;
 
     private Transform _myTransform;
     private Transform MyTransform
@@ -21,7 +22,10 @@ public class EnemyAttack : MonoBehaviour
 
     private void Update()
     {
-        TargetInfront();
+        if (TargetInfront() && HaveTargetLineOfSight())
+        {
+            Debug.Log("Fire on target!!");
+        }
     }
 
     private bool TargetInfront()
@@ -30,15 +34,39 @@ public class EnemyAttack : MonoBehaviour
         float angle = Vector3.Angle(MyTransform.forward, directionToTarget);
         if (Mathf.Abs(angle) > 90 && Mathf.Abs(angle) < 270)
         {
-            Debug.DrawLine(transform.position, _target.position, Color.red);
             return true;
         }
         else
         {
-            Debug.DrawLine(transform.position, _target.position, Color.green);
             return false;
         }
 
+    }
+
+    private bool HaveTargetLineOfSight()
+    {
+        Vector3 attackDirection = _target.position - MyTransform.position;
+        foreach (var laser in _lasers)
+        {
+            if (Physics.Raycast(laser.transform.position, attackDirection, out RaycastHit hit, laser.Distance))
+            {
+                if (hit.transform.CompareTag("Player"))
+                {
+                    Debug.DrawRay(laser.transform.position, attackDirection, Color.red);
+                    return true;
+                }
+            }
+
+        }
+        return false;
+    }
+
+    private void FireLaser()
+    {
+        foreach (var laser in _lasers)
+        {
+            laser.FireLaser();
+        }
     }
 
 }
