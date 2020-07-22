@@ -7,13 +7,6 @@ public class PlayerInput : MonoBehaviour
 
     [SerializeField] private Laser[] _lasers;
 
-    private Transform _transform;
-
-    private void Awake()
-    {
-        _transform = transform;
-    }
-
     private void Update()
     {
         
@@ -21,8 +14,8 @@ public class PlayerInput : MonoBehaviour
         {
             foreach (var laser in _lasers)
             {
-                Vector3 targetPosition = _transform.position + (_transform.forward * laser.Distance);
-                laser.FireLaser(targetPosition);
+//                Vector3 targetPosition = _transform.position + (_transform.forward * laser.Distance);
+                laser.FireLaser();
             }
         }
     }

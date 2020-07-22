@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour {
     private void Turn()
     {
         float yaw = _turnSpeed * Time.deltaTime * CrossPlatformInputManager.GetAxis("Horizontal");
-        float pitch = _turnSpeed * Time.deltaTime * -CrossPlatformInputManager.GetAxis("Mouse Y");
+        float pitch = _turnSpeed * Time.deltaTime * -CrossPlatformInputManager.GetAxis("Vertical");
         float roll = _turnSpeed * Time.deltaTime * -CrossPlatformInputManager.GetAxis("Mouse X");
         _transform.Rotate(pitch, yaw, roll);
     }

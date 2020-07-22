@@ -29,11 +29,34 @@ public class Laser : MonoBehaviour
         _canFire = true;
     }
 
-    public void FireLaser(Vector3 targetPosition) {
+    private void Update()
+    {
+        Debug.DrawRay(_transform.position, _transform.TransformDirection(Vector3.forward) * _laserDistance, Color.yellow);
+    }
+
+    private Vector3 CastRay()
+    {
+        RaycastHit hit;
+        Vector3 laserDirection = _transform.TransformDirection(Vector3.forward) * _laserDistance;
+        if (Physics.Raycast(transform.position, laserDirection, out hit))
+        {
+            Debug.Log("Raycast Hit: " + hit.transform.name);
+            Explosion hitExplosion = hit.transform.GetComponent<Explosion>();
+            if(hitExplosion != null)
+                hitExplosion.OnHit(hit.point);
+            return hit.point;
+        }
+        else
+        {
+            Debug.Log("Raycast Miss");
+            return _transform.position + (_transform.forward * _laserDistance);
+        }
+    }
+    public void FireLaser() {
         if (_canFire)
         {
             _laserBeam.SetPosition(0, _transform.position);
-            _laserBeam.SetPosition(1, targetPosition);
+            _laserBeam.SetPosition(1, CastRay());
             _laserBeam.enabled = true;
             _laserLight.enabled = true;
             _canFire = false;

@@ -40,5 +40,4 @@ public class Asteroid : MonoBehaviour
         return returnValue;
     }
 
-
 }
