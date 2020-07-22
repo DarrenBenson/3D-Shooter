@@ -6,11 +6,17 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float _movementSpeed = 20f;
     [SerializeField] private float _turnSpeed = 0.5f;
 
-    private Transform _transform;
-
-    private void Awake()
+    private Transform _myTransform;
+    private Transform MyTransform
     {
-        _transform = transform;
+        get
+        {
+            if (_myTransform == null)
+            {
+                _myTransform = transform;
+            }
+            return _myTransform;
+        }
     }
 
     private void Update()
@@ -21,14 +27,14 @@ public class EnemyMovement : MonoBehaviour
 
     private void Turn()
     {
-        Vector3 pos = _target.position - _transform.position;
+        Vector3 pos = _target.position - MyTransform.position;
         Quaternion rotation = Quaternion.LookRotation(pos);
-        transform.rotation = Quaternion.Slerp(_transform.rotation, rotation, _turnSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(MyTransform.rotation, rotation, _turnSpeed * Time.deltaTime);
     }
 
     private void Move()
     {
-        _transform.position += _transform.forward * _movementSpeed * Time.deltaTime;
+        MyTransform.position += MyTransform.forward * _movementSpeed * Time.deltaTime;
     }
 
 }

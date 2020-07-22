@@ -45,9 +45,8 @@ public class Laser : MonoBehaviour
 
     private Vector3 CastRay()
     {
-        RaycastHit hit;
         Vector3 laserDirection = MyTransform.TransformDirection(Vector3.forward) * _laserDistance;
-        if (Physics.Raycast(transform.position, laserDirection, out hit))
+        if (Physics.Raycast(transform.position, laserDirection, out RaycastHit hit))
         {
             Debug.Log("Raycast Hit: " + hit.transform.name);
             Explosion hitExplosion = hit.transform.GetComponent<Explosion>();
@@ -64,7 +63,7 @@ public class Laser : MonoBehaviour
     public void FireLaser() {
         if (_canFire)
         {
-            _laserBeam.SetPosition(0, _transform.position);
+            _laserBeam.SetPosition(0, MyTransform.position);
             _laserBeam.SetPosition(1, CastRay());
             _laserBeam.enabled = true;
             _laserLight.enabled = true;

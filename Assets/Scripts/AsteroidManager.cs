@@ -46,7 +46,7 @@ public class AsteroidManager : MonoBehaviour
 
     private void SpawnAsteroid(Vector3 asteroidPosition)
     {
-        Instantiate(_asteroid, asteroidPosition, Quaternion.identity, _transform);
+        Instantiate(_asteroid, asteroidPosition, Quaternion.identity, MyTransform);
     }
 
 }
