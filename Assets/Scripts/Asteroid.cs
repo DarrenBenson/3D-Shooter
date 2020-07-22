@@ -7,23 +7,30 @@ public class Asteroid : MonoBehaviour
     [SerializeField] private float _maxScale = 1.2f;
     [SerializeField] private float _rotationSpeed = 50f;
 
-    private Transform _transform ;
     private Vector3 _currentRotation;
 
-    private void Awake()
+    private Transform _myTransform;
+    private Transform MyTransform
     {
-        _transform = transform;
+        get
+        {
+            if (_myTransform == null)
+            {
+                _myTransform = transform;
+            }
+            return _myTransform;
+        }
     }
 
     private void Start()
     {
-        _transform.localScale = GetRandomVector3(_minScale, _maxScale);
+        MyTransform.localScale = GetRandomVector3(_minScale, _maxScale);
         _currentRotation = GetRandomVector3(_rotationSpeed);
     }
 
     private void Update()
     {
-        _transform.Rotate(_currentRotation * Time.deltaTime);
+        MyTransform.Rotate(_currentRotation * Time.deltaTime);
     }
 
     private Vector3 GetRandomVector3(float offset)

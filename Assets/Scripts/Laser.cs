@@ -13,11 +13,20 @@ public class Laser : MonoBehaviour
     private Light _laserLight;
     private bool _canFire = true;
 
-    private Transform _transform;
-
+    private Transform _myTransform;
+    private Transform MyTransform
+    {
+        get
+        {
+            if (_myTransform == null)
+            {
+                _myTransform = transform;
+            }
+            return _myTransform;
+        }
+    }
     private void Awake()
     {
-        _transform = transform;
         _laserBeam = GetComponent<LineRenderer>();
         _laserLight = GetComponent<Light>();
     }
@@ -31,13 +40,13 @@ public class Laser : MonoBehaviour
 
     private void Update()
     {
-        Debug.DrawRay(_transform.position, _transform.TransformDirection(Vector3.forward) * _laserDistance, Color.yellow);
+        Debug.DrawRay(MyTransform.position, MyTransform.TransformDirection(Vector3.forward) * _laserDistance, Color.yellow);
     }
 
     private Vector3 CastRay()
     {
         RaycastHit hit;
-        Vector3 laserDirection = _transform.TransformDirection(Vector3.forward) * _laserDistance;
+        Vector3 laserDirection = MyTransform.TransformDirection(Vector3.forward) * _laserDistance;
         if (Physics.Raycast(transform.position, laserDirection, out hit))
         {
             Debug.Log("Raycast Hit: " + hit.transform.name);
@@ -49,7 +58,7 @@ public class Laser : MonoBehaviour
         else
         {
             Debug.Log("Raycast Miss");
-            return _transform.position + (_transform.forward * _laserDistance);
+            return MyTransform.position + (MyTransform.forward * _laserDistance);
         }
     }
     public void FireLaser() {
