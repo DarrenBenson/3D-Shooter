@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 246114823488041762}
   - component: {fileID: 2012889917}
   - component: {fileID: 3383161358609112753}
-  - component: {fileID: 373456628}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -52,6 +51,8 @@ MonoBehaviour:
   _target: {fileID: 0}
   _movementSpeed: 20
   _turnSpeed: 0.5
+  _rayCastOffset: 2.5
+  _rayCastRange: 20
 --- !u!114 &3383161358609112753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,20 +69,6 @@ MonoBehaviour:
   _lasers:
   - {fileID: 2561504884499960437}
   - {fileID: 1263839278425796002}
---- !u!114 &373456628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 953147496053502881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec6eff128366aaa48ad40ee1e326fb0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosion: {fileID: 349980709863082755, guid: fc3bddcf8c4f4bd429b880388517b86c,
-    type: 3}
 --- !u!1 &2019810898521880597
 GameObject:
   m_ObjectHideFlags: 0

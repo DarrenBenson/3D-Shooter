@@ -300,6 +300,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 349980709863082755, guid: fc3bddcf8c4f4bd429b880388517b86c,
     type: 3}
+  rigidBody: {fileID: -2410383903419598588}
+  _laserHitForce: 10
 --- !u!54 &-2410383903419598588
 Rigidbody:
   m_ObjectHideFlags: 0
