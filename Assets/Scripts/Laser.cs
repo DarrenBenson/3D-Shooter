@@ -63,7 +63,11 @@ public class Laser : MonoBehaviour
     {
         Explosion hitExplosion = target.GetComponent<Explosion>();
         if (hitExplosion != null)
+        {
             hitExplosion.OnHit(hitPosition);
+            hitExplosion.AddForce(hitPosition, transform);
+        }
+            
     }
 
     public void FireLaser() 

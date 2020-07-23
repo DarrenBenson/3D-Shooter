@@ -229,6 +229,7 @@ GameObject:
   - component: {fileID: -6200392170359460218}
   - component: {fileID: 74704949}
   - component: {fileID: 1252913440022462405}
+  - component: {fileID: -2410383903419598588}
   m_Layer: 0
   m_Name: Player Ship
   m_TagString: Player
@@ -299,6 +300,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 349980709863082755, guid: fc3bddcf8c4f4bd429b880388517b86c,
     type: 3}
+--- !u!54 &-2410383903419598588
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3518982887485558914}
+  serializedVersion: 2
+  m_Mass: 10
+  m_Drag: 1
+  m_AngularDrag: 0.7
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3852218052020621444
 GameObject:
   m_ObjectHideFlags: 0
