@@ -24,9 +24,11 @@ public class EnemyAttack : MonoBehaviour
 
     private void Update()
     {
-        if (TargetInfront() && HaveTargetLineOfSight())
+        var inFront = TargetInfront();
+        var canHit = HaveRaycastLineOfSight();
+        if (TargetInfront() && HaveRaycastLineOfSight())
         {
-            Debug.Log("Fire on target!!");
+            FireLaser();
         }
     }
 
@@ -45,7 +47,7 @@ public class EnemyAttack : MonoBehaviour
 
     }
 
-    private bool HaveTargetLineOfSight()
+    private bool HaveRaycastLineOfSight()
     {
         Vector3 attackDirection = _target.position - MyTransform.position;
         foreach (var laser in _lasers)
@@ -68,7 +70,7 @@ public class EnemyAttack : MonoBehaviour
     {
         foreach (var laser in _lasers)
         {
-            laser.FireLaser(_hitPosition);
+            laser.FireLaser(_hitPosition, _target);
         }
     }
 

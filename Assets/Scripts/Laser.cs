@@ -49,9 +49,7 @@ public class Laser : MonoBehaviour
         if (Physics.Raycast(transform.position, laserDirection, out RaycastHit hit))
         {
             Debug.Log("Raycast Hit: " + hit.transform.name);
-            Explosion hitExplosion = hit.transform.GetComponent<Explosion>();
-            if(hitExplosion != null)
-                hitExplosion.OnHit(hit.point);
+            SpawnExplostion(hit.point, hit.transform);
             return hit.point;
         }
         else
@@ -61,15 +59,26 @@ public class Laser : MonoBehaviour
         }
     }
 
-    public void FireLaser() 
+    private void SpawnExplostion(Vector3 hitPosition, Transform target)
     {
-        FireLaser(CastRay());
+        Explosion hitExplosion = target.GetComponent<Explosion>();
+        if (hitExplosion != null)
+            hitExplosion.OnHit(hitPosition);
     }
 
-    public void FireLaser(Vector3 targetPosition)
+    public void FireLaser() 
+    {
+        FireLaser(CastRay(), null);
+    }
+
+    public void FireLaser(Vector3 targetPosition, Transform target = null)
     {
         if (_canFire)
         {
+            if (target != null)
+            {
+                SpawnExplostion(targetPosition, target);
+            }
             _laserBeam.SetPosition(0, MyTransform.position);
             _laserBeam.SetPosition(1, targetPosition);
             _laserBeam.enabled = true;
