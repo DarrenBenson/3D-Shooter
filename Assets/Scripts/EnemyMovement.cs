@@ -2,7 +2,7 @@
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] Transform _target;
+    [SerializeField] private Transform _target;
     [SerializeField] private float _movementSpeed = 20f;
     [SerializeField] private float _turnSpeed = 0.5f;
     [SerializeField] private float _rayCastOffset = 2.5f;
@@ -10,16 +10,16 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!FindTarget())
-        {
-            return;
-        }
+        if (!FindTarget()) return;
+
         Pathfinding();
         Move();
     }
 
     private void Turn()
     {
+        if (!FindTarget()) return;
+
         Vector3 pos = _target.position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(pos);
         base.transform.rotation = Quaternion.Slerp(transform.rotation, rotation, _turnSpeed * Time.deltaTime);
@@ -78,7 +78,11 @@ public class EnemyMovement : MonoBehaviour
     { 
         if(_target == null)
         {
-            _target = GameObject.FindGameObjectWithTag("Player").transform;            
+            var player = GameObject.FindGameObjectWithTag("Player");
+            if(player != null)
+            {
+                _target = player.transform;
+            }            
         }
         var foundTarget = (_target != null);
         return foundTarget;

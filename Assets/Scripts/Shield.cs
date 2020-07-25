@@ -39,7 +39,7 @@ public class Shield : MonoBehaviour
         GameEventManager.UpdateHealthBar(_currentHealth / (float)_maxHealth);
         if(_currentHealth <= 1)
         {
-            Debug.Log("I B DED!");
+            GetComponent<Explosion>().BlowUp();
         }
     }
 

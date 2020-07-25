@@ -122,5 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6eff128366aaa48ad40ee1e326fb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 349980709863082755, guid: fc3bddcf8c4f4bd429b880388517b86c,
-    type: 3}
+  _explosion: {fileID: 1337198075554910, guid: 25c7aa9ad705fe143a4d71c1c8deb7d4, type: 3}
+  _blowUp: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3, type: 3}
+  _rigidBody: {fileID: 0}
+  _shield: {fileID: 0}
+  _laserHitForce: 10
+  _explosionDuration: 6

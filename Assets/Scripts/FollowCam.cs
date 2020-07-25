@@ -15,10 +15,25 @@ public class FollowCam : MonoBehaviour
 
    private void SmoothFollow()
     {
+        if (!FindTarget()) return;
+
         Vector3 toPosition = _target.position + (_target.rotation * _followPosition);
         transform.position = Vector3.SmoothDamp(transform.position, toPosition, ref _velocity, _followDelay);
         transform.LookAt(_target, _target.up);
     }
 
+    private bool FindTarget()
+    {
+        if (_target == null)
+        {
+            var player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                _target = player.transform;
+            }
+        }
+        var foundTarget = (_target != null);
+        return foundTarget;
+    }
 
 }

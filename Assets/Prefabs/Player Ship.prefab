@@ -137,9 +137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6eff128366aaa48ad40ee1e326fb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 349980709863082755, guid: fc3bddcf8c4f4bd429b880388517b86c,
-    type: 3}
-  rigidBody: {fileID: -2410383903419598588}
+  _explosion: {fileID: 1337198075554910, guid: 25c7aa9ad705fe143a4d71c1c8deb7d4, type: 3}
+  _blowUp: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
+  _rigidBody: {fileID: 0}
   _shield: {fileID: -9178336374214105020}
   _laserHitForce: 10
   _explosionDuration: 6
@@ -249,9 +249,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6eff128366aaa48ad40ee1e326fb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 349980709863082755, guid: fc3bddcf8c4f4bd429b880388517b86c,
-    type: 3}
-  rigidBody: {fileID: -2410383903419598588}
+  _explosion: {fileID: 1337198075554910, guid: 25c7aa9ad705fe143a4d71c1c8deb7d4, type: 3}
+  _blowUp: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
+  _rigidBody: {fileID: 0}
   _shield: {fileID: -9178336374214105020}
   _laserHitForce: 10
   _explosionDuration: 6
@@ -337,9 +337,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6eff128366aaa48ad40ee1e326fb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 349980709863082755, guid: fc3bddcf8c4f4bd429b880388517b86c,
-    type: 3}
-  rigidBody: {fileID: -2410383903419598588}
+  _explosion: {fileID: 1337198075554910, guid: 25c7aa9ad705fe143a4d71c1c8deb7d4, type: 3}
+  _blowUp: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
+  _rigidBody: {fileID: -2410383903419598588}
   _shield: {fileID: -9178336374214105020}
   _laserHitForce: 10
   _explosionDuration: 6
@@ -371,10 +371,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbbf49ec4e6a6314a87d84074912e2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  currentHealth: 0
-  regenerationAmount: 1
-  regenerationRate: 2
+  _maxHealth: 10
+  _currentHealth: 0
+  _regenerationAmount: 1
+  _regenerationRate: 2
 --- !u!1 &3852218052020621444
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,9 +576,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6eff128366aaa48ad40ee1e326fb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 349980709863082755, guid: fc3bddcf8c4f4bd429b880388517b86c,
-    type: 3}
-  rigidBody: {fileID: -2410383903419598588}
+  _explosion: {fileID: 1337198075554910, guid: 25c7aa9ad705fe143a4d71c1c8deb7d4, type: 3}
+  _blowUp: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
+  _rigidBody: {fileID: 0}
   _shield: {fileID: -9178336374214105020}
   _laserHitForce: 10
   _explosionDuration: 6

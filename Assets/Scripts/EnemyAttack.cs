@@ -11,10 +11,7 @@ public class EnemyAttack : MonoBehaviour
 
     private void Update()
     {
-        if (!FindTarget())
-        {
-            return;
-        }
+        if (!FindTarget()) return;
 
         if (TargetInfront() && HaveRaycastLineOfSight())
         {
@@ -68,7 +65,11 @@ public class EnemyAttack : MonoBehaviour
     {
         if (_target == null)
         {
-            _target = GameObject.FindGameObjectWithTag("Player").transform;
+            var player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                _target = player.transform;
+            }
         }
         var foundTarget = (_target != null);
         return foundTarget;
