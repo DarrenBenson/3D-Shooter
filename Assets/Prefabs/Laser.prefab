@@ -204,5 +204,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _laserDuration: 0.05
-  _laserDistance: 300
-  _fireDelay: 0.5
+  _laserDistance: 50
+  _fireDelay: 1
