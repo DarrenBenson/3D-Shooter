@@ -31,6 +31,11 @@ public class Shield : MonoBehaviour
     public void TakeDamage(int damageAmount =1)
     {
         _currentHealth -= damageAmount;
+        if (_currentHealth < 0)
+        {
+            _currentHealth = 0;
+        }
+        GameEventManager.TakeDamage(_currentHealth / (float)_maxHealth);
         if(_currentHealth <= 1)
         {
             Debug.Log("I B DED!");
