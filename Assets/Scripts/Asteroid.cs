@@ -9,28 +9,15 @@ public class Asteroid : MonoBehaviour
 
     private Vector3 _currentRotation;
 
-    private Transform _myTransform;
-    private Transform MyTransform
-    {
-        get
-        {
-            if (_myTransform == null)
-            {
-                _myTransform = transform;
-            }
-            return _myTransform;
-        }
-    }
-
     private void Start()
     {
-        MyTransform.localScale = GetRandomVector3(_minScale, _maxScale);
+        transform.localScale = GetRandomVector3(_minScale, _maxScale);
         _currentRotation = GetRandomVector3(_rotationSpeed);
     }
 
     private void Update()
     {
-        MyTransform.Rotate(_currentRotation * Time.deltaTime);
+        transform.Rotate(_currentRotation * Time.deltaTime);
     }
 
     private Vector3 GetRandomVector3(float offset)

@@ -9,27 +9,13 @@ public class EnemyAttack : MonoBehaviour
 
     private Vector3 _hitPosition;
 
-    private Transform _myTransform;
-    private Transform MyTransform
-    {
-        get
-        {
-            if (_myTransform == null)
-            {
-                _myTransform = transform;
-            }
-            return _myTransform;
-        }
-    }
-
     private void Update()
     {
         if (!FindTarget())
         {
             return;
         }
-        var inFront = TargetInfront();
-        var canHit = HaveRaycastLineOfSight();
+
         if (TargetInfront() && HaveRaycastLineOfSight())
         {
             FireLaser();
@@ -38,8 +24,8 @@ public class EnemyAttack : MonoBehaviour
 
     private bool TargetInfront()
     {
-        Vector3 directionToTarget = MyTransform.position - _target.position;
-        float angle = Vector3.Angle(MyTransform.forward, directionToTarget);
+        Vector3 directionToTarget = transform.position - _target.position;
+        float angle = Vector3.Angle(transform.forward, directionToTarget);
         if (Mathf.Abs(angle) > 90 && Mathf.Abs(angle) < 270)
         {
             return true;
@@ -53,7 +39,7 @@ public class EnemyAttack : MonoBehaviour
 
     private bool HaveRaycastLineOfSight()
     {
-        Vector3 attackDirection = _target.position - MyTransform.position;
+        Vector3 attackDirection = _target.position - transform.position;
         foreach (var laser in _lasers)
         {
             if (Physics.Raycast(laser.transform.position, attackDirection, out RaycastHit hit, laser.Distance))

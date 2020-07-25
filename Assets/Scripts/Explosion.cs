@@ -10,6 +10,14 @@ public class Explosion : MonoBehaviour
     [SerializeField] private float _laserHitForce = 10f;
     [SerializeField] private float _explosionDuration = 6f;
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        foreach(var contactPoint in collision.contacts)
+        {
+            SpawnExplosion(contactPoint.point);
+        }
+    }
+
     private void SpawnExplosion(Vector3 explosionPosition)
     {
         GameObject spawnedExplosion = Instantiate(explosion, explosionPosition, Quaternion.identity, transform);
@@ -17,14 +25,6 @@ public class Explosion : MonoBehaviour
         if (_shield != null)
         {
             _shield.TakeDamage();
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        foreach(var contactPoint in collision.contacts)
-        {
-            SpawnExplosion(contactPoint.point);
         }
     }
 

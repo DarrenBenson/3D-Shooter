@@ -13,18 +13,6 @@ public class Laser : MonoBehaviour
     private Light _laserLight;
     private bool _canFire = true;
 
-    private Transform _myTransform;
-    private Transform MyTransform
-    {
-        get
-        {
-            if (_myTransform == null)
-            {
-                _myTransform = transform;
-            }
-            return _myTransform;
-        }
-    }
     private void Awake()
     {
         _laserBeam = GetComponent<LineRenderer>();
@@ -40,13 +28,13 @@ public class Laser : MonoBehaviour
 
     private void Update()
     {
-        Debug.DrawRay(MyTransform.position, MyTransform.TransformDirection(Vector3.forward) * _laserDistance, Color.yellow);
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * _laserDistance, Color.yellow);
     }
 
     private Vector3 CastRay()
     {
-        Vector3 laserDirection = MyTransform.TransformDirection(Vector3.forward) * _laserDistance;
-        if (Physics.Raycast(transform.position, laserDirection, out RaycastHit hit))
+        Vector3 laserDirection = transform.TransformDirection(Vector3.forward) * _laserDistance;
+        if (Physics.Raycast(base.transform.position, laserDirection, out RaycastHit hit))
         {
             Debug.Log("Raycast Hit: " + hit.transform.name);
             SpawnExplostion(hit.point, hit.transform);
@@ -55,7 +43,7 @@ public class Laser : MonoBehaviour
         else
         {
             Debug.Log("Raycast Miss");
-            return MyTransform.position + (MyTransform.forward * _laserDistance);
+            return transform.position + (transform.forward * _laserDistance);
         }
     }
 
@@ -64,7 +52,7 @@ public class Laser : MonoBehaviour
         Explosion hitExplosion = target.GetComponent<Explosion>();
         if (hitExplosion != null)
         {
-            hitExplosion.AddForce(hitPosition, transform);
+            hitExplosion.AddForce(hitPosition, base.transform);
         }
             
     }
@@ -82,7 +70,7 @@ public class Laser : MonoBehaviour
             {
                 SpawnExplostion(targetPosition, target);
             }
-            _laserBeam.SetPosition(0, MyTransform.position);
+            _laserBeam.SetPosition(0, transform.position);
             _laserBeam.SetPosition(1, targetPosition);
             _laserBeam.enabled = true;
             _laserLight.enabled = true;

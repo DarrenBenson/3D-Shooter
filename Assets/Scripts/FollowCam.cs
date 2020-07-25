@@ -8,19 +8,6 @@ public class FollowCam : MonoBehaviour
 
     private Vector3 _velocity = Vector3.one;
 
-    private Transform _myTransform;
-    private Transform MyTransform
-    {
-        get
-        {
-            if (_myTransform == null)
-            {
-                _myTransform = transform;
-            }
-            return _myTransform;
-        }
-    }
-
     private void LateUpdate()
     {
         SmoothFollow();
@@ -29,8 +16,8 @@ public class FollowCam : MonoBehaviour
    private void SmoothFollow()
     {
         Vector3 toPosition = _target.position + (_target.rotation * _followPosition);
-        MyTransform.position = Vector3.SmoothDamp(MyTransform.position, toPosition, ref _velocity, _followDelay);
-        MyTransform.LookAt(_target, _target.up);
+        transform.position = Vector3.SmoothDamp(transform.position, toPosition, ref _velocity, _followDelay);
+        transform.LookAt(_target, _target.up);
     }
 
 

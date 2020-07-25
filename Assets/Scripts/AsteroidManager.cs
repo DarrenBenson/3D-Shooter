@@ -5,19 +5,6 @@ public class AsteroidManager : MonoBehaviour
     [SerializeField] private Asteroid _asteroid;
     [SerializeField] private int _gridSpacing = 10;
 
-    private Transform _myTransform;
-    private Transform MyTransform
-    {
-        get
-        {
-            if (_myTransform == null)
-            {
-                _myTransform = transform;
-            }
-            return _myTransform;
-        }
-    }
-
     private void OnEnable()
     {
         GameEventManager.OnStartGame += PlaceAsteroids;
@@ -35,9 +22,9 @@ public class AsteroidManager : MonoBehaviour
             for (var y = 0; y < _gridSpacing; y++)
             {
                 for (var z = 0; z < _gridSpacing; z++){
-                    var xPos = MyTransform.position.x + (x * _gridSpacing) + RandomGridOffset();
-                    var yPos = MyTransform.position.y + (y * _gridSpacing) + RandomGridOffset();
-                    var zPos = MyTransform.position.z + (z * _gridSpacing) + RandomGridOffset();
+                    var xPos = transform.position.x + (x * _gridSpacing) + RandomGridOffset();
+                    var yPos = transform.position.y + (y * _gridSpacing) + RandomGridOffset();
+                    var zPos = transform.position.z + (z * _gridSpacing) + RandomGridOffset();
                     SpawnAsteroid(new Vector3(xPos, yPos, zPos));
                 }
             }            
@@ -51,7 +38,7 @@ public class AsteroidManager : MonoBehaviour
 
     private void SpawnAsteroid(Vector3 asteroidPosition)
     {
-        Instantiate(_asteroid, asteroidPosition, Quaternion.identity, MyTransform);
+        Instantiate(_asteroid, asteroidPosition, Quaternion.identity, transform);
     }
 
 }
