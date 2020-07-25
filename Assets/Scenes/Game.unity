@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 278197798}
   - component: {fileID: 278197802}
   - component: {fileID: 278197803}
+  - component: {fileID: 278197804}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -332,6 +333,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timePassed: 0
   _timerText: {fileID: 1392736892}
+--- !u!114 &278197804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278197797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6781bf23f5b82d5448e66ecfb34790be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _highScoreText: {fileID: 1370147010}
+  _gameScoreText: {fileID: 1812752473}
+  _gameScore: 0
+  _highScore: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1634,6 +1651,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7859238247234401093, guid: 8a3ab3c12da79174b89ec867658988ed,
+        type: 3}
+      propertyPath: _asteroidPrefab
+      value: 
+      objectReference: {fileID: 6663884312041538399, guid: e9eb8c58f0335fe4cbd817464a9a9f79,
+        type: 3}
     - target: {fileID: 7859238247234401094, guid: 8a3ab3c12da79174b89ec867658988ed,
         type: 3}
       propertyPath: m_Name

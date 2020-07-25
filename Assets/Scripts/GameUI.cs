@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class GameUI : MonoBehaviour
 {
@@ -22,10 +23,15 @@ public class GameUI : MonoBehaviour
 
     private void Start()
     {
-        ShowMainMenu();
+        DelayShowMainMenu();
     }
 
     private void ShowMainMenu()
+    {
+        Invoke("DelayShowMainMenu", Asteroid.destructionDelay * 3f);
+    }
+
+    private void DelayShowMainMenu()
     {
         _mainMenu.SetActive(true);
         _gameUI.SetActive(false);

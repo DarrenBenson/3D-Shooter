@@ -1,18 +1,24 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class AsteroidManager : MonoBehaviour
 {
-    [SerializeField] private Asteroid _asteroid;
+    [SerializeField] private Asteroid _asteroidPrefab;
     [SerializeField] private int _gridSpacing = 10;
+
+    private List<Asteroid> _asteroidList = new List<Asteroid>();
 
     private void OnEnable()
     {
         GameEventManager.OnStartGame += PlaceAsteroids;
+        GameEventManager.OnPlayerDestroyed += DestroyAsteroids;
     }
 
     private void OnDisable()
     {
         GameEventManager.OnStartGame -= PlaceAsteroids;
+        GameEventManager.OnPlayerDestroyed -= DestroyAsteroids;
     }
 
     private void PlaceAsteroids()
@@ -38,7 +44,16 @@ public class AsteroidManager : MonoBehaviour
 
     private void SpawnAsteroid(Vector3 asteroidPosition)
     {
-        Instantiate(_asteroid, asteroidPosition, Quaternion.identity, transform);
+        var spawnedAsteroid = Instantiate(_asteroidPrefab, asteroidPosition, Quaternion.identity, transform);
+        _asteroidList.Add(spawnedAsteroid);
     }
 
+    private void DestroyAsteroids()
+    {
+        foreach(var asteroid in _asteroidList)
+        {
+            asteroid.SelfDestruct();
+        }
+        _asteroidList.Clear();
+    }
 }

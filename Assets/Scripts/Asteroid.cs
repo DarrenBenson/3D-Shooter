@@ -7,6 +7,8 @@ public class Asteroid : MonoBehaviour
     [SerializeField] private float _maxScale = 1.2f;
     [SerializeField] private float _rotationSpeed = 50f;
 
+    public static float destructionDelay = 1f;
+
     private Vector3 _currentRotation;
 
     private void Start()
@@ -32,6 +34,17 @@ public class Asteroid : MonoBehaviour
         returnValue.y = Random.Range(minRange, maxRange);
         returnValue.z = Random.Range(minRange, maxRange);
         return returnValue;
+    }
+
+    public void SelfDestruct()
+    {
+        var timer = Random.Range(0, destructionDelay);
+        Invoke("BlowUp", timer);
+    }
+
+    private void BlowUp()
+    {
+        GetComponent<Explosion>().BlowUp();
     }
 
 }

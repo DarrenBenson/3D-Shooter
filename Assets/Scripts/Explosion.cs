@@ -39,8 +39,7 @@ public class Explosion : MonoBehaviour
     }
 
     public void BlowUp()
-    {
-        GameEventManager.PlayerDestroyed();
+    {        
         Instantiate(_blowUp, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

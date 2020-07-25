@@ -1,14 +1,12 @@
 ﻿using UnityEngine;
 
-
-
 public class Shield : MonoBehaviour
 {
 
     [SerializeField] private int _maxHealth = 10;
     [SerializeField] private int _currentHealth;
     [SerializeField] private int _regenerationAmount = 1;
-    [SerializeField] private float _regenerationRate = 2f;
+    [Tooltip("Time in seconds")][SerializeField] private float _regenerationRate = 2f;
 
     private void Start()
     {
@@ -37,9 +35,10 @@ public class Shield : MonoBehaviour
             _currentHealth = 0;
         }
         GameEventManager.UpdateHealthBar(Mathf.RoundToInt(_currentHealth/(float)_maxHealth * 100));
-        if(_currentHealth <= 1)
-        {
+        if(_currentHealth < 1)
+        {            
             GetComponent<Explosion>().BlowUp();
+            GameEventManager.PlayerDestroyed();
         }
     }
 

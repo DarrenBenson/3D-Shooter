@@ -45,9 +45,10 @@ public class GameScore : MonoBehaviour
         }
     }
 
-    private void UpdateScore(int scoreAmount)
+    private void UpdateScore(int incrementAmount)
     {
-        _gameScore += scoreAmount;
+        _gameScore += incrementAmount;
+        DisplayGameScore();
     }
 
     private void ResetGameScore()
