@@ -5,8 +5,8 @@ public class GameEventManager : MonoBehaviour
 
     public delegate void StartGameDelegate();
     public static StartGameDelegate OnStartGame;
-    public delegate void TakeDamageDelegate(float percentDamage);
-    public static TakeDamageDelegate OnTakeDamage;
+    public delegate void UpdateHealthBarDelegate(float percentDamage);
+    public static UpdateHealthBarDelegate OnUpdateHealthBar;
 
     public static void StartGame()
     {
@@ -16,11 +16,11 @@ public class GameEventManager : MonoBehaviour
         }
     }
 
-    public static void TakeDamage(float percentDamage)
+    public static void UpdateHealthBar(float percentDamage)
     {
-        if (OnTakeDamage != null) // Check for subscribers
+        if (OnUpdateHealthBar != null) // Check for subscribers
         {
-            OnTakeDamage(percentDamage);
+            OnUpdateHealthBar(percentDamage);
         }
     }
 

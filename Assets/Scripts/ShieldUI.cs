@@ -9,12 +9,12 @@ public class ShieldUI : MonoBehaviour
 
     private void OnEnable()
     {
-        GameEventManager.OnTakeDamage += UpdateShieldDisplay;
+        GameEventManager.OnUpdateHealthBar += UpdateHealthBar;
     }
 
     private void OnDisable()
     {
-        GameEventManager.OnTakeDamage -= UpdateShieldDisplay;
+        GameEventManager.OnUpdateHealthBar -= UpdateHealthBar;
     }
 
     private void Awake()
@@ -22,9 +22,8 @@ public class ShieldUI : MonoBehaviour
         _maxWidth = _healthBar.rect.width;
     }
 
-    private void UpdateShieldDisplay(float percentDamage)
+    private void UpdateHealthBar(float percentHealthRemaining)
     {
-        var percentHealthRemaining = 1 - percentDamage;
         _healthBar.sizeDelta = new Vector2(_maxWidth * percentHealthRemaining, _healthBar.rect.height);
     }
 }
