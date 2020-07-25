@@ -2,15 +2,29 @@
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private Transform _target;
     [SerializeField] private float _movementSpeed = 20f;
     [SerializeField] private float _turnSpeed = 0.5f;
     [SerializeField] private float _rayCastOffset = 2.5f;
     [SerializeField] private float _rayCastRange = 20f;
 
+    private Transform _target;
+
+
+    private void OnEnable()
+    {
+        GameEventManager.OnPlayerDestroyed += TargetMainCamera;
+    }
+
+    private void OnDisable()
+    {
+        GameEventManager.OnPlayerDestroyed -= TargetMainCamera;
+    }
+
+
+
     private void Update()
     {
-        if (!FindTarget()) return;
+        if (!TargetPlayer()) return;
 
         Pathfinding();
         Move();
@@ -18,7 +32,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Turn()
     {
-        if (!FindTarget()) return;
+        if (!TargetPlayer()) return;
 
         Vector3 pos = _target.position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(pos);
@@ -74,7 +88,7 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private bool FindTarget() 
+    private bool TargetPlayer() 
     { 
         if(_target == null)
         {
@@ -87,4 +101,14 @@ public class EnemyMovement : MonoBehaviour
         var foundTarget = (_target != null);
         return foundTarget;
     }
+
+    private void TargetMainCamera()
+    {
+        var mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        if (mainCamera != null)
+        {
+            _target = mainCamera.transform;
+        }
+    }
+
 }

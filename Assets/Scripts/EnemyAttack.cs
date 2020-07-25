@@ -4,14 +4,15 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
 
-    [SerializeField] private Transform _target;
+    
     [SerializeField] private Laser[] _lasers;
 
+    private Transform _target;
     private Vector3 _hitPosition;
 
     private void Update()
     {
-        if (!FindTarget()) return;
+        if (!TargetPlayer()) return;
 
         if (TargetInfront() && HaveRaycastLineOfSight())
         {
@@ -61,7 +62,7 @@ public class EnemyAttack : MonoBehaviour
         }
     }
 
-    private bool FindTarget()
+    private bool TargetPlayer()
     {
         if (_target == null)
         {

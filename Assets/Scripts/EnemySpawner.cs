@@ -9,12 +9,13 @@ public class EnemySpawner : MonoBehaviour
     private void OnEnable()
     {
         GameEventManager.OnStartGame += StartSpawning;
+        GameEventManager.OnPlayerDestroyed += StopSpawning;
     }
 
     private void OnDisable()
-    {
-        StopSpawning();
+    {        
         GameEventManager.OnStartGame -= StartSpawning;
+        GameEventManager.OnPlayerDestroyed += StopSpawning;
     }
 
     private void SpawnEnemy()
