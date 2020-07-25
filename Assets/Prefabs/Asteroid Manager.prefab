@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cd1a49a123f841489c4c5fd581a5567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _asteroidPrefab: {fileID: 327331273780482707, guid: 0cba40252c5639d4dbd0b48aa458b9d3,
+  _asteroidPrefab: {fileID: 9053711631501725320, guid: a21e251ffd57f7544943ff7292d30302,
     type: 3}
   _asteroidsPerAxis: 10
   _gridSpacing: 50
