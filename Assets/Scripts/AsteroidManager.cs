@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class AsteroidManager : MonoBehaviour
 {
     [SerializeField] private Asteroid _asteroidPrefab;
+    [SerializeField] private int _asteroidsPerAxis = 10;
     [SerializeField] private int _gridSpacing = 10;
 
     private List<Asteroid> _asteroidList = new List<Asteroid>();
@@ -23,11 +24,11 @@ public class AsteroidManager : MonoBehaviour
 
     private void PlaceAsteroids()
     {
-        for (var x = 0; x < _gridSpacing; x++)
+        for (var x = 0; x < _asteroidsPerAxis; x++)
         {
-            for (var y = 0; y < _gridSpacing; y++)
+            for (var y = 0; y < _asteroidsPerAxis; y++)
             {
-                for (var z = 0; z < _gridSpacing; z++){
+                for (var z = 0; z < _asteroidsPerAxis; z++){
                     var xPos = transform.position.x + (x * _gridSpacing) + RandomGridOffset();
                     var yPos = transform.position.y + (y * _gridSpacing) + RandomGridOffset();
                     var zPos = transform.position.z + (z * _gridSpacing) + RandomGridOffset();

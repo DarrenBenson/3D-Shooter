@@ -1,5 +1,7 @@
 using UnityEngine;
 
+[DisallowMultipleComponent]
+[RequireComponent(typeof(Explosion))]
 public class Asteroid : MonoBehaviour
 {
 

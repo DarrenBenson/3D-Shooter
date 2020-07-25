@@ -1,11 +1,11 @@
 using UnityEngine;
 
 public class FollowCam : MonoBehaviour
-{
-    [SerializeField] private Transform _target;
+{    
     [SerializeField] private Vector3 _followPosition = new Vector3(0f, 2f, -10f);
     [SerializeField] private float _followDelay = 0.15f;
 
+    private Transform _target;
     private Vector3 _velocity = Vector3.one;
 
     private void LateUpdate()

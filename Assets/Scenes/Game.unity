@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 697dcc1a69e1a2c4ea5db483875ede85, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mainMenu: {fileID: 1431326928}
   _gameUI: {fileID: 186998013}
-  _playerPrefab: {fileID: 3518982887485558914, guid: af9d619966f18ea4e8f618b82b2757ea,
+  _playerPrefab: {fileID: 8274491039598835654, guid: 96c0c7fe4b07c394da1988a7bb4e3f76,
     type: 3}
   _playerSpawner: {fileID: 1159263648}
 --- !u!114 &278197803
@@ -1522,11 +1522,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4745911667194073043, guid: dc879f158c9da924aa97d06bf09ee51e,
-        type: 3}
-      propertyPath: _target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7338252197763909033, guid: dc879f158c9da924aa97d06bf09ee51e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1651,12 +1646,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7859238247234401093, guid: 8a3ab3c12da79174b89ec867658988ed,
-        type: 3}
-      propertyPath: _asteroidPrefab
-      value: 
-      objectReference: {fileID: 6663884312041538399, guid: e9eb8c58f0335fe4cbd817464a9a9f79,
-        type: 3}
     - target: {fileID: 7859238247234401094, guid: 8a3ab3c12da79174b89ec867658988ed,
         type: 3}
       propertyPath: m_Name

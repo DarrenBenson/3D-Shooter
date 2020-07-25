@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7859238247234401092}
   - component: {fileID: 7859238247234401093}
   m_Layer: 0
-  m_Name: AsteroidManager
+  m_Name: Asteroid Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cd1a49a123f841489c4c5fd581a5567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _asteroid: {fileID: 6663884312041538399, guid: e9eb8c58f0335fe4cbd817464a9a9f79,
+  _asteroidPrefab: {fileID: 327331273780482707, guid: 0cba40252c5639d4dbd0b48aa458b9d3,
     type: 3}
-  _gridSpacing: 10
+  _asteroidsPerAxis: 10
+  _gridSpacing: 50
