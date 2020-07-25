@@ -24,6 +24,10 @@ public class EnemyAttack : MonoBehaviour
 
     private void Update()
     {
+        if (!FindTarget())
+        {
+            return;
+        }
         var inFront = TargetInfront();
         var canHit = HaveRaycastLineOfSight();
         if (TargetInfront() && HaveRaycastLineOfSight())
@@ -72,6 +76,16 @@ public class EnemyAttack : MonoBehaviour
         {
             laser.FireLaser(_hitPosition, _target);
         }
+    }
+
+    private bool FindTarget()
+    {
+        if (_target == null)
+        {
+            _target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        var foundTarget = _target != null;
+        return foundTarget;
     }
 
 }
