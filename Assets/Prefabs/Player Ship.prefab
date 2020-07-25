@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 3104697542877558508}
   - component: {fileID: 2437410623054600712}
   - component: {fileID: 3255157515814632988}
+  - component: {fileID: 5163648713800916059}
   m_Layer: 0
   m_Name: Right Gun
   m_TagString: Untagged
@@ -124,6 +125,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5163648713800916059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026227151140645634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6eff128366aaa48ad40ee1e326fb0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 349980709863082755, guid: fc3bddcf8c4f4bd429b880388517b86c,
+    type: 3}
+  rigidBody: {fileID: -2410383903419598588}
+  _shield: {fileID: -9178336374214105020}
+  _laserHitForce: 10
+  _explosionDuration: 6
 --- !u!1 &2349562198057411295
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,6 +155,7 @@ GameObject:
   - component: {fileID: 6861547114208816797}
   - component: {fileID: 1330168050587009180}
   - component: {fileID: 8438396176970370469}
+  - component: {fileID: 2469603159596485049}
   m_Layer: 0
   m_Name: Left Gun
   m_TagString: Untagged
@@ -217,6 +237,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2469603159596485049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2349562198057411295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6eff128366aaa48ad40ee1e326fb0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 349980709863082755, guid: fc3bddcf8c4f4bd429b880388517b86c,
+    type: 3}
+  rigidBody: {fileID: -2410383903419598588}
+  _shield: {fileID: -9178336374214105020}
+  _laserHitForce: 10
+  _explosionDuration: 6
 --- !u!1 &3518982887485558914
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,6 +268,7 @@ GameObject:
   - component: {fileID: 74704949}
   - component: {fileID: 1252913440022462405}
   - component: {fileID: -2410383903419598588}
+  - component: {fileID: -9178336374214105020}
   m_Layer: 0
   m_Name: Player Ship
   m_TagString: Player
@@ -301,7 +340,9 @@ MonoBehaviour:
   explosion: {fileID: 349980709863082755, guid: fc3bddcf8c4f4bd429b880388517b86c,
     type: 3}
   rigidBody: {fileID: -2410383903419598588}
+  _shield: {fileID: -9178336374214105020}
   _laserHitForce: 10
+  _explosionDuration: 6
 --- !u!54 &-2410383903419598588
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -318,6 +359,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-9178336374214105020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3518982887485558914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbf49ec4e6a6314a87d84074912e2c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  currentHealth: 0
+  regenerationAmount: 1
+  regenerationRate: 2
 --- !u!1 &3852218052020621444
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,6 +482,7 @@ GameObject:
   - component: {fileID: 4097905913619997021}
   - component: {fileID: 1544958287282052507}
   - component: {fileID: 4598359374460086738}
+  - component: {fileID: 9187896221781984933}
   m_Layer: 0
   m_Name: Cockpit
   m_TagString: Player
@@ -506,6 +564,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9187896221781984933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615843434282669316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6eff128366aaa48ad40ee1e326fb0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 349980709863082755, guid: fc3bddcf8c4f4bd429b880388517b86c,
+    type: 3}
+  rigidBody: {fileID: -2410383903419598588}
+  _shield: {fileID: -9178336374214105020}
+  _laserHitForce: 10
+  _explosionDuration: 6
 --- !u!1 &6793164162346196849
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,6 +882,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa583e07074750d4d8d65c03acd51365, type: 3}
+--- !u!4 &1019640210656710419 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5722230192184225668, guid: fa583e07074750d4d8d65c03acd51365,
+    type: 3}
+  m_PrefabInstance: {fileID: 4705996990197145751}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4705996989405903681 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1364892630, guid: fa583e07074750d4d8d65c03acd51365,
@@ -818,12 +900,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6811a1ed2faf7204b84c515ac00d03bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1019640210656710419 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5722230192184225668, guid: fa583e07074750d4d8d65c03acd51365,
-    type: 3}
-  m_PrefabInstance: {fileID: 4705996990197145751}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4705996990596674424
 PrefabInstance:
   m_ObjectHideFlags: 0
