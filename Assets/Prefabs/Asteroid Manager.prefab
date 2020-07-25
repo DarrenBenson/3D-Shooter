@@ -45,5 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _asteroidPrefab: {fileID: 9053711631501725320, guid: a21e251ffd57f7544943ff7292d30302,
     type: 3}
+  _pickupPrefab: {fileID: 6959094968400859277, guid: 520a888d83dad2f40b143975cc437472,
+    type: 3}
   _asteroidsPerAxis: 10
   _gridSpacing: 50

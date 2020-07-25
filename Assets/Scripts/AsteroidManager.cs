@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class AsteroidManager : MonoBehaviour
 {
     [SerializeField] private Asteroid _asteroidPrefab;
+    [SerializeField] private GameObject _pickupPrefab;
     [SerializeField] private int _asteroidsPerAxis = 10;
     [SerializeField] private int _gridSpacing = 10;
 
@@ -32,10 +33,12 @@ public class AsteroidManager : MonoBehaviour
                     var xPos = transform.position.x + (x * _gridSpacing) + RandomGridOffset();
                     var yPos = transform.position.y + (y * _gridSpacing) + RandomGridOffset();
                     var zPos = transform.position.z + (z * _gridSpacing) + RandomGridOffset();
-                    SpawnAsteroid(new Vector3(xPos, yPos, zPos));
+                    var name = string.Format("Asteroid ({0},{1},{2})", x, y, z);
+                    SpawnAsteroid(name, new Vector3(xPos, yPos, zPos));
                 }
             }            
         }
+        SpawnPickup();
     }
 
     private float RandomGridOffset()
@@ -43,11 +46,22 @@ public class AsteroidManager : MonoBehaviour
         return Random.Range(-_gridSpacing/2f, _gridSpacing/2f);
     }
 
-    private void SpawnAsteroid(Vector3 asteroidPosition)
+    private void SpawnAsteroid(string name, Vector3 asteroidPosition)
     {
         var spawnedAsteroid = Instantiate(_asteroidPrefab, asteroidPosition, Quaternion.identity, transform);
+        spawnedAsteroid.name = name;
         _asteroidList.Add(spawnedAsteroid);
     }
+
+    private void SpawnPickup()
+    {
+        var randomAsteroid = _asteroidList[Random.Range(0, _asteroidList.Count)];
+        var spawnedPickup = Instantiate(_pickupPrefab, randomAsteroid.transform.position, Quaternion.identity, transform);
+        spawnedPickup.name = randomAsteroid.name.Replace("Asteroid", "Pickup");
+        _asteroidList.Remove(randomAsteroid);
+        Destroy(randomAsteroid.gameObject);
+    }
+
 
     private void DestroyAsteroids()
     {
