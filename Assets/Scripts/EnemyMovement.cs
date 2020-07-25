@@ -12,15 +12,15 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnEnable()
     {
+        GameEventManager.OnStartGame += SelfDestruct;
         GameEventManager.OnPlayerDestroyed += TargetMainCamera;
     }
 
     private void OnDisable()
     {
+        GameEventManager.OnStartGame -= SelfDestruct;
         GameEventManager.OnPlayerDestroyed -= TargetMainCamera;
     }
-
-
 
     private void Update()
     {
@@ -109,6 +109,11 @@ public class EnemyMovement : MonoBehaviour
         {
             _target = mainCamera.transform;
         }
+    }
+
+    void SelfDestruct()
+    {
+        Destroy(gameObject);
     }
 
 }

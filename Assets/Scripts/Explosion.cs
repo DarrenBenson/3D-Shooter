@@ -40,7 +40,8 @@ public class Explosion : MonoBehaviour
 
     public void BlowUp()
     {        
-        Instantiate(_blowUp, transform.position, Quaternion.identity);
+        var spawnedExplosion = Instantiate(_blowUp, transform.position, Quaternion.identity);
+        Destroy(spawnedExplosion, _explosionDuration);
         Destroy(gameObject);
     }
 
