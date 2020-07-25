@@ -18,9 +18,14 @@ public class AsteroidManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void OnEnable()
     {
-        PlaceAsteroids();
+        GameEventManager.OnStartGame += PlaceAsteroids;
+    }
+
+    private void OnDisable()
+    {
+        GameEventManager.OnStartGame -= PlaceAsteroids;
     }
 
     private void PlaceAsteroids()

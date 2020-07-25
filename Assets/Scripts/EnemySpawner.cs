@@ -6,9 +6,15 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject _enemyPrefab;
     [Tooltip("Time between spawns in seconds")][SerializeField] private float _spawnTime = 5f;
 
-    private void Start()
+    private void OnEnable()
     {
-        StartSpawning();
+        GameEventManager.OnStartGame += StartSpawning;
+    }
+
+    private void OnDisable()
+    {
+        StopSpawning();
+        GameEventManager.OnStartGame -= StartSpawning;
     }
 
     private void SpawnEnemy()

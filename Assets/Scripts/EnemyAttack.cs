@@ -84,7 +84,7 @@ public class EnemyAttack : MonoBehaviour
         {
             _target = GameObject.FindGameObjectWithTag("Player").transform;
         }
-        var foundTarget = _target != null;
+        var foundTarget = (_target != null);
         return foundTarget;
     }
 
