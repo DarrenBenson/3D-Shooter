@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 278197799}
   - component: {fileID: 278197798}
   - component: {fileID: 278197802}
+  - component: {fileID: 278197803}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -317,6 +318,20 @@ MonoBehaviour:
   _playerPrefab: {fileID: 3518982887485558914, guid: af9d619966f18ea4e8f618b82b2757ea,
     type: 3}
   _playerSpawner: {fileID: 1159263648}
+--- !u!114 &278197803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278197797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f4bc56d75df904293ba1681886471b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timePassed: 0
+  _timerText: {fileID: 1392736892}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,7 +774,7 @@ GameObject:
   - component: {fileID: 1392736893}
   - component: {fileID: 1392736892}
   m_Layer: 5
-  m_Name: Timer
+  m_Name: Game Timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

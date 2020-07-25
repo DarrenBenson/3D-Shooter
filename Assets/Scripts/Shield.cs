@@ -26,7 +26,7 @@ public class Shield : MonoBehaviour
         {
             _currentHealth = _maxHealth;
         }
-        GameEventManager.UpdateHealthBar(_currentHealth / (float)_maxHealth);
+        GameEventManager.UpdateHealthBar(Mathf.RoundToInt(_currentHealth/(float)_maxHealth * 100));
     }
 
     public void TakeDamage(int damageAmount =1)
@@ -36,7 +36,7 @@ public class Shield : MonoBehaviour
         {
             _currentHealth = 0;
         }
-        GameEventManager.UpdateHealthBar(_currentHealth / (float)_maxHealth);
+        GameEventManager.UpdateHealthBar(Mathf.RoundToInt(_currentHealth/(float)_maxHealth * 100));
         if(_currentHealth <= 1)
         {
             GetComponent<Explosion>().BlowUp();

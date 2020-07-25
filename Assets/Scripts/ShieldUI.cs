@@ -22,8 +22,8 @@ public class ShieldUI : MonoBehaviour
         _maxWidth = _healthBar.rect.width;
     }
 
-    private void UpdateHealthBar(float percentHealthRemaining)
+    private void UpdateHealthBar(int percentHealthRemaining)
     {
-        _healthBar.sizeDelta = new Vector2(_maxWidth * percentHealthRemaining, _healthBar.rect.height);
+        _healthBar.sizeDelta = new Vector2(Mathf.RoundToInt(_maxWidth * (percentHealthRemaining/100f)), _healthBar.rect.height);
     }
 }
