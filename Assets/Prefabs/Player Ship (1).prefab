@@ -64,22 +64,7 @@ MonoBehaviour:
   _currentHealth: 0
   _regenerationAmount: 1
   _regenerationRate: 2
---- !u!114 &5005484772482123299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8274491039598835654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8948f72acba63cf4bac71c9bec21e14f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _lasers:
-  - {fileID: 1766656976357991013}
-  - {fileID: 3811097604297504043}
---- !u!114 &5487177071027499390
+--- !u!114 &6247336607441012650
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,6 +80,9 @@ MonoBehaviour:
   _turnSpeed: 60
   _thrusters:
   - {fileID: 6328558876322169546}
+  _lasers:
+  - {fileID: 1766656976357991013}
+  - {fileID: 3811097604297504043}
 --- !u!1001 &342790372050147334
 PrefabInstance:
   m_ObjectHideFlags: 0
