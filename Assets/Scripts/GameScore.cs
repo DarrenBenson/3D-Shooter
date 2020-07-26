@@ -14,14 +14,14 @@ public class GameScore : MonoBehaviour
     private void OnEnable()
     {
         GameEventManager.OnStartGame += ResetGameScore;
-        GameEventManager.OnUpdateScore += UpdateScore;
+        GameEventManager.OnIncrementScore += IncrementScore;
         GameEventManager.OnPlayerDestroyed += CheckNewHighScore;
     }
 
     private void OnDisable()
     {
         GameEventManager.OnStartGame -= ResetGameScore;
-        GameEventManager.OnUpdateScore -= UpdateScore;
+        GameEventManager.OnIncrementScore -= IncrementScore;
         GameEventManager.OnPlayerDestroyed -= CheckNewHighScore;
     }
 
@@ -45,9 +45,9 @@ public class GameScore : MonoBehaviour
         }
     }
 
-    private void UpdateScore(int incrementAmount)
+    private void IncrementScore(int points)
     {
-        _gameScore += incrementAmount;
+        _gameScore += points;
         DisplayGameScore();
     }
 
@@ -59,7 +59,7 @@ public class GameScore : MonoBehaviour
 
     private void DisplayGameScore()
     {
-        _gameScoreText.text = _highScore.ToString();
+        _gameScoreText.text = _gameScore.ToString();
     }
 
     private void DisplayHighScore()

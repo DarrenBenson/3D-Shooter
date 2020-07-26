@@ -46,6 +46,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minScale: 2.4
   _maxScale: 6
+--- !u!114 &-6837313149662829062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6289675064164987044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdaa8a918600bce468e24c13d72d260e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _rotationSpeed: 50
 --- !u!1001 &6289675064164901500
 PrefabInstance:
@@ -56,7 +68,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 119512, guid: 5578b82f17c954843901e8b68ca21dcc, type: 3}
       propertyPath: m_Name
-      value: Asteroid (2) Variant
+      value: Asteroid (1)
       objectReference: {fileID: 0}
     - target: {fileID: 451560, guid: 5578b82f17c954843901e8b68ca21dcc, type: 3}
       propertyPath: m_LocalPosition.x

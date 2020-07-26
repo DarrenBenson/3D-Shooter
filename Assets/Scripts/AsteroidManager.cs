@@ -14,12 +14,14 @@ public class AsteroidManager : MonoBehaviour
     private void OnEnable()
     {
         GameEventManager.OnStartGame += PlaceAsteroids;
+        GameEventManager.OnRespawnPickup += SpawnPickup;
         GameEventManager.OnPlayerDestroyed += DestroyAsteroids;
     }
 
     private void OnDisable()
     {
         GameEventManager.OnStartGame -= PlaceAsteroids;
+        GameEventManager.OnRespawnPickup -= SpawnPickup;
         GameEventManager.OnPlayerDestroyed -= DestroyAsteroids;
     }
 

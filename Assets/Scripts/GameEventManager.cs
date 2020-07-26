@@ -3,13 +3,14 @@
 public class GameEventManager : MonoBehaviour
 {
 
-    public delegate void StartGameDelegate();
-    public static StartGameDelegate OnStartGame;
-    public static StartGameDelegate OnPlayerDestroyed;
+    public delegate void PlayGameDelegate();
+    public static PlayGameDelegate OnStartGame;
+    public static PlayGameDelegate OnRespawnPickup;
+    public static PlayGameDelegate OnPlayerDestroyed;
 
     public delegate void UpdateGameUIDelegate(int amount);
     public static UpdateGameUIDelegate OnUpdateHealthBar;
-    public static UpdateGameUIDelegate OnUpdateScore;
+    public static UpdateGameUIDelegate OnIncrementScore;
 
 
     public static void StartGame()
@@ -17,6 +18,15 @@ public class GameEventManager : MonoBehaviour
         if(OnStartGame != null) // Check for subscribers
         {
             OnStartGame();
+        }
+    }
+
+
+    public static void RespawnPickup()
+    {
+        if (OnRespawnPickup != null) // Check for subscribers
+        {
+            OnRespawnPickup();
         }
     }
 
@@ -28,11 +38,11 @@ public class GameEventManager : MonoBehaviour
         }
     }
 
-    public static void UpdateScore(int scoreAmount)
+    public static void IncrementScore(int points)
     {
-        if (OnUpdateScore != null) // Check for subscribers
+        if (OnIncrementScore != null) // Check for subscribers
         {
-            OnUpdateScore(scoreAmount);
+            OnIncrementScore(points);
         }
     }
 
