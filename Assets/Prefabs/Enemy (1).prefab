@@ -139,6 +139,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Left Laser
       objectReference: {fileID: 0}
+    - target: {fileID: 5722230192184225674, guid: fa583e07074750d4d8d65c03acd51365,
+        type: 3}
+      propertyPath: m_TagString
+      value: Laser
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa583e07074750d4d8d65c03acd51365, type: 3}
 --- !u!114 &561722353515445508 stripped
@@ -239,6 +244,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 761680793922483453}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2902939069302891833
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4710260725417368193}
+    m_Modifications:
+    - target: {fileID: 495093381807159509, guid: 090a69de2d30791479ce0e552e8b8fa7,
+        type: 3}
+      propertyPath: m_Name
+      value: Thruster
+      objectReference: {fileID: 0}
+    - target: {fileID: 495093381807159511, guid: 090a69de2d30791479ce0e552e8b8fa7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495093381807159511, guid: 090a69de2d30791479ce0e552e8b8fa7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495093381807159511, guid: 090a69de2d30791479ce0e552e8b8fa7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 495093381807159511, guid: 090a69de2d30791479ce0e552e8b8fa7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495093381807159511, guid: 090a69de2d30791479ce0e552e8b8fa7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495093381807159511, guid: 090a69de2d30791479ce0e552e8b8fa7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495093381807159511, guid: 090a69de2d30791479ce0e552e8b8fa7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 495093381807159511, guid: 090a69de2d30791479ce0e552e8b8fa7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 495093381807159511, guid: 090a69de2d30791479ce0e552e8b8fa7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495093381807159511, guid: 090a69de2d30791479ce0e552e8b8fa7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495093381807159511, guid: 090a69de2d30791479ce0e552e8b8fa7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 090a69de2d30791479ce0e552e8b8fa7, type: 3}
 --- !u!1001 &5212421325435037031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -313,6 +387,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Right Laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 5722230192184225674, guid: fa583e07074750d4d8d65c03acd51365,
+        type: 3}
+      propertyPath: m_TagString
+      value: Laser
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa583e07074750d4d8d65c03acd51365, type: 3}

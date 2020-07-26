@@ -36,12 +36,12 @@ public class Player : MonoBehaviour {
 
     private void Move()
     {
-        if(Input.GetAxis("Vertical") > 0)
+        if(Input.GetAxis("Fire3") > 0)
         {
-            transform.position += transform.forward * _movementSpeed * Time.deltaTime * (Input.GetButton("Fire3")?1:0);
+            transform.position += transform.forward * _movementSpeed * Time.deltaTime * Input.GetAxis("Fire3");
             foreach(var thruster in _thrusters)
             {
-                thruster.Intensity(Input.GetAxis("Vertical"));
+                thruster.Intensity(Input.GetAxis("Fire3"));
             }
         }
     }

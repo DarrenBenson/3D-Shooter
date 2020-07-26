@@ -236,6 +236,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Left Laser
       objectReference: {fileID: 0}
+    - target: {fileID: 5722230192184225674, guid: fa583e07074750d4d8d65c03acd51365,
+        type: 3}
+      propertyPath: m_TagString
+      value: Laser
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa583e07074750d4d8d65c03acd51365, type: 3}
 --- !u!114 &1766656976357991013 stripped
@@ -317,6 +322,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right Laser
       objectReference: {fileID: 0}
+    - target: {fileID: 5722230192184225674, guid: fa583e07074750d4d8d65c03acd51365,
+        type: 3}
+      propertyPath: m_TagString
+      value: Laser
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa583e07074750d4d8d65c03acd51365, type: 3}
 --- !u!114 &3811097604297504043 stripped
@@ -342,6 +352,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Main Thruster
+      objectReference: {fileID: 0}
+    - target: {fileID: 495093381807159509, guid: 090a69de2d30791479ce0e552e8b8fa7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Thruster
       objectReference: {fileID: 0}
     - target: {fileID: 495093381807159511, guid: 090a69de2d30791479ce0e552e8b8fa7,
         type: 3}
