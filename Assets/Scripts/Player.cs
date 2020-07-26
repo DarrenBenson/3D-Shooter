@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
 
 [DisallowMultipleComponent]
 public class Player : MonoBehaviour {
@@ -18,7 +17,7 @@ public class Player : MonoBehaviour {
 
     private void Fire()
     {
-        if (CrossPlatformInputManager.GetButton("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
             foreach (var laser in _lasers)
             {
@@ -29,20 +28,20 @@ public class Player : MonoBehaviour {
 
     private void Turn()
     {
-        float yaw = _turnSpeed * Time.deltaTime * CrossPlatformInputManager.GetAxis("Horizontal");
-        float pitch = _turnSpeed * Time.deltaTime * -CrossPlatformInputManager.GetAxis("Pitch");
-        float roll = _turnSpeed * Time.deltaTime * -CrossPlatformInputManager.GetAxis("Roll");
+        float yaw = _turnSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
+        float pitch = _turnSpeed * Time.deltaTime * -Input.GetAxis("Vertical");
+        float roll = _turnSpeed * Time.deltaTime * -Input.GetAxis("Roll");
         transform.Rotate(pitch, yaw, roll);
     }
 
     private void Move()
     {
-        if(CrossPlatformInputManager.GetAxis("Vertical") > 0)
+        if(Input.GetAxis("Vertical") > 0)
         {
-            transform.position += transform.forward * _movementSpeed * Time.deltaTime * CrossPlatformInputManager.GetAxis("Vertical");
+            transform.position += transform.forward * _movementSpeed * Time.deltaTime * (Input.GetButton("Fire3")?1:0);
             foreach(var thruster in _thrusters)
             {
-                thruster.Intensity(CrossPlatformInputManager.GetAxis("Vertical"));
+                thruster.Intensity(Input.GetAxis("Vertical"));
             }
         }
     }
