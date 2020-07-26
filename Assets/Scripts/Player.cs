@@ -28,22 +28,32 @@ public class Player : MonoBehaviour {
 
     private void Turn()
     {
-        float yaw = _turnSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
-        float pitch = _turnSpeed * Time.deltaTime * -Input.GetAxis("Vertical");
+        float pitch = _turnSpeed * Time.deltaTime * Input.GetAxis("Vertical");
+        float yaw = _turnSpeed * Time.deltaTime * Input.GetAxis("Horizontal");        
         float roll = _turnSpeed * Time.deltaTime * -Input.GetAxis("Roll");
         transform.Rotate(pitch, yaw, roll);
     }
 
     private void Move()
     {
-        if(Input.GetAxis("Fire3") > 0)
+        if (Input.GetAxis("Fire3") > 0)
         {
             transform.position += transform.forward * _movementSpeed * Time.deltaTime * Input.GetAxis("Fire3");
-            foreach(var thruster in _thrusters)
-            {
-                thruster.Intensity(Input.GetAxis("Fire3"));
-            }
+            SetThrusterIntensity(Input.GetAxis("Fire3"));
         }
+        else 
+        {
+            SetThrusterIntensity(0f);
+        }
+    }
+
+    private void SetThrusterIntensity(float intensity)
+    {
+        foreach (var thruster in _thrusters)
+        {
+            thruster.Intensity(intensity);
+        }
+
     }
 
 }
