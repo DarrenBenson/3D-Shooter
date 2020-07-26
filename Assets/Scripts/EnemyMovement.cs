@@ -6,8 +6,10 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float _turnSpeed = 0.5f;
     [SerializeField] private float _rayCastOffset = 2.5f;
     [SerializeField] private float _rayCastRange = 20f;
+    [SerializeField] private int _points = 50;
 
     private Transform _target;
+    private bool _isBlowingUp = false;
 
 
     private void OnEnable()
@@ -111,9 +113,20 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    void SelfDestruct()
+    private void SelfDestruct()
     {
         Destroy(gameObject);
+    }
+
+    public void BlowUp()
+    {
+        if (!_isBlowingUp)
+        {
+            _isBlowingUp = true;
+            GameEventManager.IncrementScore(_points);
+            transform.GetComponent<Explosion>().BlowUp();
+            SelfDestruct();
+        }
     }
 
 }

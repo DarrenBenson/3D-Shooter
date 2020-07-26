@@ -6,7 +6,7 @@ public class Pickup : MonoBehaviour
 {
 
     [SerializeField] private int _points = 100;
-    private bool _isCollected = false;
+    private bool _isCollected = false; // make sure the pickup is only collected once (protect from multiple hits)
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,7 +14,6 @@ public class Pickup : MonoBehaviour
         {
             if (!_isCollected)
             {
-                _isCollected = true;
                 Collect();
             }
         }
@@ -22,9 +21,13 @@ public class Pickup : MonoBehaviour
 
     public void Collect()
     {
-        GameEventManager.IncrementScore(_points);
-        GameEventManager.RespawnPickup();
-        Destroy(gameObject);
+        if (!_isCollected)
+        {
+            _isCollected = true;
+            GameEventManager.IncrementScore(_points);
+            GameEventManager.RespawnPickup();
+            Destroy(gameObject);
+        }            
     }
 
 }

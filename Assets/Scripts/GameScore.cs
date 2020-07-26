@@ -14,6 +14,7 @@ public class GameScore : MonoBehaviour
     private void OnEnable()
     {
         GameEventManager.OnStartGame += ResetGameScore;
+        GameEventManager.OnStartGame += LoadHighScore;
         GameEventManager.OnIncrementScore += IncrementScore;
         GameEventManager.OnPlayerDestroyed += CheckNewHighScore;
     }
@@ -21,18 +22,14 @@ public class GameScore : MonoBehaviour
     private void OnDisable()
     {
         GameEventManager.OnStartGame -= ResetGameScore;
+        GameEventManager.OnStartGame -= LoadHighScore;
         GameEventManager.OnIncrementScore -= IncrementScore;
         GameEventManager.OnPlayerDestroyed -= CheckNewHighScore;
     }
 
-    private void Start()
-    {
-        LoadHighScore();
-    }
-
     private void LoadHighScore()
     {
-        PlayerPrefs.GetInt("highScore", 0);
+        _highScore = PlayerPrefs.GetInt("highScore", 0);
         DisplayHighScore();
     }
 
@@ -40,7 +37,8 @@ public class GameScore : MonoBehaviour
     {
         if (_gameScore > _highScore)
         {
-            PlayerPrefs.SetInt("highScore", _gameScore);
+            _highScore = _gameScore;
+            PlayerPrefs.SetInt("highScore", _highScore);
             DisplayHighScore();
         }
     }

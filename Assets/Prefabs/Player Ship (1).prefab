@@ -42,8 +42,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6eff128366aaa48ad40ee1e326fb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosion: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3, type: 3}
-  _blowUp: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
+  _explosion: {fileID: 100000, guid: 979632a27455af442bd2d8f36eb0ffce, type: 3}
+  _blowUp: {fileID: 100004, guid: 757df604761b8ef42831192c70ee1099, type: 3}
   _rigidBody: {fileID: -4216975819744746081}
   _shield: {fileID: -2823355687244285632}
   _laserHitForce: 10
@@ -105,7 +105,7 @@ PrefabInstance:
     - target: {fileID: 8508763989470736320, guid: 4ac95bf73b13d0a41a962d5d8a87ff8e,
         type: 3}
       propertyPath: m_Name
-      value: Player Ship (2) Variant
+      value: Player Ship (1)
       objectReference: {fileID: 0}
     - target: {fileID: 8508763989470736320, guid: 4ac95bf73b13d0a41a962d5d8a87ff8e,
         type: 3}
