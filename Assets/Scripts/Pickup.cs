@@ -27,7 +27,7 @@ public class Pickup : MonoBehaviour
             GameEventManager.IncrementScore(_points);
             GameEventManager.RespawnPickup();
             Destroy(gameObject);
-        }            
+        }
     }
 
 }

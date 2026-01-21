@@ -1,7 +1,8 @@
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
 
     [SerializeField] private float _movementSpeed = 50f;
     [SerializeField] private float _turnSpeed = 60f;
@@ -29,7 +30,7 @@ public class Player : MonoBehaviour {
     private void Turn()
     {
         float pitch = _turnSpeed * Time.deltaTime * Input.GetAxis("Vertical");
-        float yaw = _turnSpeed * Time.deltaTime * Input.GetAxis("Horizontal");        
+        float yaw = _turnSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
         float roll = _turnSpeed * Time.deltaTime * -Input.GetAxis("Roll");
         transform.Rotate(pitch, yaw, roll);
     }
@@ -41,7 +42,7 @@ public class Player : MonoBehaviour {
             transform.position += transform.forward * _movementSpeed * Time.deltaTime * Input.GetAxis("Fire3");
             SetThrusterIntensity(Input.GetAxis("Fire3"));
         }
-        else 
+        else
         {
             SetThrusterIntensity(0f);
         }

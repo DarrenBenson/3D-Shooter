@@ -26,7 +26,7 @@ public class GameTimer : MonoBehaviour
         {
             _timePassed += Time.deltaTime;
             UpdateGameTimerDisplay();
-        }        
+        }
     }
 
     private void StartGameTimer()
@@ -40,7 +40,7 @@ public class GameTimer : MonoBehaviour
         _keepTime = false;
     }
 
-    private void UpdateGameTimerDisplay() 
+    private void UpdateGameTimerDisplay()
     {
         var minutes = Mathf.FloorToInt(_timePassed / 60);
         var seconds = _timePassed % 60;

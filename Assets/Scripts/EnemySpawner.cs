@@ -13,7 +13,7 @@ public class EnemySpawner : MonoBehaviour
     }
 
     private void OnDisable()
-    {        
+    {
         GameEventManager.OnStartGame -= StartSpawning;
         GameEventManager.OnPlayerDestroyed += StopSpawning;
     }

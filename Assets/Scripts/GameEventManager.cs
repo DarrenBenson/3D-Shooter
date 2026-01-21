@@ -15,7 +15,7 @@ public class GameEventManager : MonoBehaviour
 
     public static void StartGame()
     {
-        if(OnStartGame != null) // Check for subscribers
+        if (OnStartGame != null) // Check for subscribers
         {
             OnStartGame();
         }

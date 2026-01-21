@@ -13,7 +13,7 @@ public class Explosion : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        foreach(var contactPoint in collision.contacts)
+        foreach (var contactPoint in collision.contacts)
         {
             SpawnExplosion(contactPoint.point);
         }
@@ -39,7 +39,7 @@ public class Explosion : MonoBehaviour
     }
 
     public void BlowUp()
-    {        
+    {
         var spawnedExplosion = Instantiate(_blowUp, transform.position, Quaternion.identity);
         Destroy(spawnedExplosion, _explosionDuration);
         Destroy(gameObject);

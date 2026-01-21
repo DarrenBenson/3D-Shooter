@@ -24,19 +24,19 @@ public class Shield : MonoBehaviour
         {
             _currentHealth = _maxHealth;
         }
-        GameEventManager.UpdateHealthBar(Mathf.RoundToInt(_currentHealth/(float)_maxHealth * 100));
+        GameEventManager.UpdateHealthBar(Mathf.RoundToInt(_currentHealth / (float)_maxHealth * 100));
     }
 
-    public void TakeDamage(int damageAmount =1)
+    public void TakeDamage(int damageAmount = 1)
     {
         _currentHealth -= damageAmount;
         if (_currentHealth < 0)
         {
             _currentHealth = 0;
         }
-        GameEventManager.UpdateHealthBar(Mathf.RoundToInt(_currentHealth/(float)_maxHealth * 100));
-        if(_currentHealth < 1)
-        {            
+        GameEventManager.UpdateHealthBar(Mathf.RoundToInt(_currentHealth / (float)_maxHealth * 100));
+        if (_currentHealth < 1)
+        {
             GetComponent<Explosion>().BlowUp();
             GameEventManager.PlayerDestroyed();
         }

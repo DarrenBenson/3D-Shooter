@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class FollowCam : MonoBehaviour
-{    
+{
     [SerializeField] private Vector3 _followPosition = new Vector3(0f, 2f, -10f);
     [SerializeField] private float _followDelay = 0.15f;
 
@@ -13,7 +13,7 @@ public class FollowCam : MonoBehaviour
         SmoothFollow();
     }
 
-   private void SmoothFollow()
+    private void SmoothFollow()
     {
         if (!TargetPlayer()) return;
 

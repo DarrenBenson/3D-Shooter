@@ -90,15 +90,15 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private bool TargetPlayer() 
-    { 
-        if(_target == null)
+    private bool TargetPlayer()
+    {
+        if (_target == null)
         {
             var player = GameObject.FindGameObjectWithTag("Player");
-            if(player != null)
+            if (player != null)
             {
                 _target = player.transform;
-            }            
+            }
         }
         var foundTarget = (_target != null);
         return foundTarget;

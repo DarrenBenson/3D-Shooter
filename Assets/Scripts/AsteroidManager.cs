@@ -31,21 +31,22 @@ public class AsteroidManager : MonoBehaviour
         {
             for (var y = 0; y < _asteroidsPerAxis; y++)
             {
-                for (var z = 0; z < _asteroidsPerAxis; z++){
+                for (var z = 0; z < _asteroidsPerAxis; z++)
+                {
                     var xPos = transform.position.x + (x * _gridSpacing) + RandomGridOffset();
                     var yPos = transform.position.y + (y * _gridSpacing) + RandomGridOffset();
                     var zPos = transform.position.z + (z * _gridSpacing) + RandomGridOffset();
                     var name = string.Format("Asteroid ({0},{1},{2})", x, y, z);
                     SpawnAsteroid(name, new Vector3(xPos, yPos, zPos));
                 }
-            }            
+            }
         }
         SpawnPickup();
     }
 
     private float RandomGridOffset()
     {
-        return Random.Range(-_gridSpacing/2f, _gridSpacing/2f);
+        return Random.Range(-_gridSpacing / 2f, _gridSpacing / 2f);
     }
 
     private void SpawnAsteroid(string name, Vector3 asteroidPosition)
@@ -67,7 +68,7 @@ public class AsteroidManager : MonoBehaviour
 
     private void DestroyAsteroids()
     {
-        foreach(var asteroid in _asteroidList)
+        foreach (var asteroid in _asteroidList)
         {
             asteroid.SelfDestruct();
         }

@@ -44,7 +44,7 @@ public class Laser : MonoBehaviour
                 hit.transform.GetComponent<Pickup>().Collect();
             }
             else if (hit.transform.CompareTag("Enemy"))
-            {                
+            {
                 hit.transform.GetComponent<EnemyMovement>().BlowUp();
             }
 
@@ -65,10 +65,10 @@ public class Laser : MonoBehaviour
         {
             hitExplosion.AddForce(hitPosition, base.transform);
         }
-            
+
     }
 
-    public void FireLaser() 
+    public void FireLaser()
     {
         FireLaser(CastRay(), null);
     }
@@ -91,7 +91,8 @@ public class Laser : MonoBehaviour
         }
     }
 
-    private void TurnOffLaser() {
+    private void TurnOffLaser()
+    {
         _laserBeam.enabled = false;
         _laserLight.enabled = false;
     }

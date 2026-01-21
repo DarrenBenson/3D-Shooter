@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
 
-    
+
     [SerializeField] private Laser[] _lasers;
 
     private Transform _target;
